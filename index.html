@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAARSTREND — сервис проверенных рекомендаций</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 0;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+        .problem-card {
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.2);
+        }
+        .feature-card .card-body {
+            padding: 25px;
+        }
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 28px;
+        }
+        .nav-link {
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .footer {
+            background: #212529;
+            color: white;
+            padding: 40px 0;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--primary-color); font-size: 24px;">
+                STAARSTREND
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#how-it-works">Как работает</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Возможности</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#benefits">Преимущества</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#monetization">Монетизация</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#" class="btn btn-primary rounded-pill">Начать сейчас</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Проверенные рекомендации от профессионалов</h1>
+                    <p class="lead mb-4">STAARSTREND — платформа, которая объединяет профессиональных спортсменов, экспертов и публичных личностей для создания структурированных коллекций проверенных товаров, мест и сервисов</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#" class="btn btn-primary btn-lg">Попробовать бесплатно</a>
+                        <a href="#" class="btn btn-outline-primary btn-lg">Как это работает</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <div class="bg-light rounded-circle p-2 me-3" style="width: 50px; height: 50px;"></div>
+                                <div>
+                                    <h5 class="card-title">Алексей Смирнов</h5>
+                                    <p class="text-muted small">Профессиональный баскетболист</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"Лучшие спортивные добавки, которые я использую на протяжении 5 лет. Проверено на себе и своей команде."</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge bg-primary-subtle text-primary">Спортивное питание</span>
+                                <span class="badge bg-primary-subtle text-primary">Тренировки</span>
+                                <span class="badge bg-primary-subtle text-primary">Восстановление</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card shadow-lg border-0 mt-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <div class="bg-light rounded-circle p-2 me-3" style="width: 50px; height: 50px;"></div>
+                                <div>
+                                    <h5 class="card-title">Мария Иванова</h5>
+                                    <p class="text-muted small">Нутрициолог</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"Подборка ресторанов с правильным питанием в Москве. Все заведения проверены мной лично за последний год."</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge bg-primary-subtle text-primary">Питание</span>
+                                <span class="badge bg-primary-subtle text-primary">Рестораны</span>
+                                <span class="badge bg-primary-subtle text-primary">Здоровье</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Проблема поиска рекомендаций -->
+    <section class="section bg-light" id="problem">
+        <div class="container">
+            <h2 class="section-title text-center">Сложности поиска проверенных рекомендаций</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card problem-card h-100 p-4 bg-white">
+                        <div class="icon-circle mb-3">
+                            <i>🔍</i>
+                        </div>
+                        <h3 class="h5 mb-3">Сложно найти проверенные рекомендации</h3>
+                        <p class="text-muted">Среди множества предложений в интернете сложно выделить действительно проверенные и качественные рекомендации.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card problem-card h-100 p-4 bg-white">
+                        <div class="icon-circle mb-3">
+                            <i>❌</i>
+                        </div>
+                        <h3 class="h5 mb-3">Нерелевантная информация</h3>
+                        <p class="text-muted">Большое количество нерелевантной информации затрудняет поиск действительно полезных и качественных рекомендаций.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card problem-card h-100 p-4 bg-white">
+                        <div class="icon-circle mb-3">
+                            <i>⚠️</i>
+                        </div>
+                        <h3 class="h5 mb-3">Отсутствие проверенных источников</h3>
+                        <p class="text-muted">Недостаток проверенных источников с качественными рекомендациями усложняет процесс выбора и принятия решений.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как работает STAARSTREND -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title text-center">Как работает STAARSTREND</h2>
+            <div class="row g-5">
+                <div class="col-lg-4 text-center">
+                    <div class="icon-circle mx-auto mb-4">
+                        <i>📝</i>
+                    </div>
+                    <h3 class="h5 mb-3">Создание профиля автора</h3>
+                    <p class="text-muted">Авторы-спортсмены и эксперты регистрируются на платформе и создают свои профили, подтверждая свою экспертизу.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="icon-circle mx-auto mb-4">
+                        <i>📦</i>
+                    </div>
+                    <h3 class="h5 mb-3">Создание подборок</h3>
+                    <p class="text-muted">Авторы формируют структурированные коллекции рекомендаций по различным категориям товаров, мест и сервисов.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="icon-circle mx-auto mb-4">
+                        <i>❤️</i>
+                    </div>
+                    <h3 class="h5 mb-3">Просмотр и сохранение</h3>
+                    <p class="text-muted">Пользователи просматривают подборки, сохраняют их для дальнейшего использования и подписываются на авторов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ключевые функции -->
+    <section class="section bg-light" id="features">
+        <div class="container">
+            <h2 class="section-title text-center">Ключевые функции STAARSTREND</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card border-0">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mx-auto mb-4">
+                                <i>👤</i>
+                            </div>
+                            <h3 class="h5 mb-3">Профили авторов</h3>
+                            <p class="text-muted">Ознакомьтесь с рекомендациями от профессиональных спортсменов и экспертов с подтвержденной экспертизой.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card border-0">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mx-auto mb-4">
+                                <i>📚</i>
+                            </div>
+                            <h3 class="h5 mb-3">Карточки рекомендаций</h3>
+                            <p class="text-muted">Подробные описания с внешними и партнёрскими ссылками на рекомендуемые товары и услуги.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card border-0">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mx-auto mb-4">
+                                <i>⭐</i>
+                            </div>
+                            <h3 class="h5 mb-3">Премиум-доступ</h3>
+                            <p class="text-muted">Эксклюзивные подборки и дополнительные возможности для премиум-пользователей.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card border-0">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mx-auto mb-4">
+                                <i>🔖</i>
+                            </div>
+                            <h3 class="h5 mb-3">Подборки рекомендаций</h3>
+                            <p class="text-muted">Структурированные коллекции товаров, мест и сервисов от авторов платформы.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card border-0">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mx-auto mb-4">
+                                <i>💾</i>
+                            </div>
+                            <h3 class="h5 mb-3">Сохранение и подписка</h3>
+                            <p class="text-muted">Сохраняйте любимые подборки и подписывайтесь на авторов для получения новых рекомендаций.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card border-0">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mx-auto mb-4">
+                                <i>🤝</i>
+                            </div>
+                            <h3 class="h5 mb-3">Партнёрские ссылки</h3>
+                            <p class="text-muted">Авторы получают вознаграждение за рекомендации через партнёрские программы.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="section" id="benefits">
+        <div class="container">
+            <h2 class="section-title text-center">Преимущества STAARSTREND</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                         alt="Преимущества STAARSTREND" 
+                         class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 40px; height: 40px;">1</div>
+                        </div>
+                        <div>
+                            <h3 class="h5">Доступ к экспертным рекомендациям</h3>
+                            <p class="text-muted">Получайте проверенные подборки от профессиональных спортсменов, экспертов и публичных личностей.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 40px; height: 40px;">2</div>
+                        </div>
+                        <div>
+                            <h3 class="h5">Сохранение и подписка на авторов</h3>
+                            <p class="text-muted">Сохраняйте любимые подборки и подписывайтесь на авторов для персонализированного контента.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 40px; height: 40px;">3</div>
+                        </div>
+                        <div>
+                            <h3 class="h5">Эксклюзивные подборки</h3>
+                            <p class="text-muted">Premium-доступ открывает доступ к эксклюзивным рекомендациям и коллаборациям с брендами.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 40px; height: 40px;">4</div>
+                        </div>
+                        <div>
+                            <h3 class="h5">Возможность сотрудничества с брендами</h3>
+                            <p class="text-muted">Авторы могут сотрудничать с брендами, создавая уникальные и эксклюзивные подборки.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Монетизация -->
+    <section class="section bg-light" id="monetization">
+        <div class="container">
+            <h2 class="section-title text-center">Модель монетизации</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-circle mx-auto mb-4" style="background: #4cc9f0;">
+                                <i>🔗</i>
+                            </div>
+                            <h3 class="h5 mb-3">Партнёрские ссылки</h3>
+                            <p class="text-muted">Доход от партнёрских программ при переходе пользователей по рекомендациям авторов.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-circle mx-auto mb-4" style="background: #7209b7;">
+                                <i>💎</i>
+                            </div>
+                            <h3 class="h5 mb-3">Подписки Premium</h3>
+                            <p class="text-muted">Ежемесячные и годовые подписки для доступа к эксклюзивным подборкам и функциям.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-circle mx-auto mb-4" style="background: #f72585;">
+                                <i>🤝</i>
+                            </div>
+                            <h3 class="h5 mb-3">Эксклюзивные коллаборации</h3>
+                            <p class="text-muted">Специальные проекты и коллаборации с брендами для создания уникального контента.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section-title text-center">Часто задаваемые вопросы</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- Вопрос 1 -->
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Что такое STAARSTREND?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    STAARSTREND — это цифровая платформа, предлагающая рекомендации и подборки от профессиональных спортсменов, экспертов и публичных личностей. Мы помогаем пользователям находить проверенные рекомендации в различных сферах жизни.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Вопрос 2 -->
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Кто может создавать подборки на платформе?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Подборки на платформе создают профессиональные спортсмены, эксперты в различных областях и публичные личности. Все авторы проходят верификацию перед публикацией контента.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Вопрос 3 -->
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Могу ли я сохранять подборки и подписываться на авторов?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Да, вы можете сохранять понравившиеся подборки в избранное и подписываться на авторов, чтобы получать уведомления о новых рекомендациях и подборках.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Вопрос 4 -->
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Есть ли на платформе премиум-контент?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Да, премиум-доступ предоставляет эксклюзивные подборки, дополнительные возможности на платформе и доступ к специальным коллаборациям с брендами. Вы можете оформить подписку в личном кабинете.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Вопрос 5 -->
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Как авторы зарабатывают на платформе?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Авторы получают доход через партнёрские программы при переходе пользователей по их рекомендациям, а также могут зарабатывать на эксклюзивных коллаборациях с брендами и через премиум-контент.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Начните находить проверенные рекомендации уже сегодня</h2>
+            <p class="lead mb-5">Присоединяйтесь к сообществу профессионалов и получайте доступ к лучшим рекомендациям</p>
+            <a href="#" class="btn btn-light btn-lg px-5 py-3 fs-5">Попробовать бесплатно</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h3 class="h4 fw-bold mb-4" style="color: #4cc9f0;">STAARSTREND</h3>
+                    <p class="text-muted mb-4">Платформа проверенных рекомендаций от профессиональных спортсменов и экспертов.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white"><i>FB</i></a>
+                        <a href="#" class="text-white"><i>IG</i></a>
+                        <a href="#" class="text-white"><i>TW</i></a>
+                        <a href="#" class="text-white"><i>YT</i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 offset-md-1 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-4 text-white">Платформа</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Как это работает</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Преимущества</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Тарифы</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Блог</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-4 text-white">Ресурсы</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Поддержка</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">API</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Документация</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-4 text-white">Подписка</h5>
+                    <p class="text-muted mb-3">Получайте обновления и эксклюзивные предложения</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Ваш email">
+                        <button class="btn btn-light" type="button">Подписаться</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light mt-5 mb-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted mb-0">© 2026 STAARSTREND. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-muted text-decoration-none me-3">Политика конфиденциальности</a>
+                    <a href="#" class="text-muted text-decoration-none">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Smooth scrolling for anchor links -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
